@@ -1,0 +1,64 @@
+/* --- Start overlay: cute birthday splash gate --- */
+.start-overlay{
+  position:fixed; inset:0; z-index:500; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+  background:
+    radial-gradient(circle at 75% 75%, rgba(90,16,22,0.55), transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(64,32,64,0.5), transparent 55%),
+    rgba(10,8,8,0.72);
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+  transition:opacity .9s ease, visibility 0s linear 0s;
+}
+.start-overlay.hidden{
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity .9s ease, visibility 0s linear .9s;
+}
+.start-decor{
+  position:absolute; inset:-20px; z-index:1; pointer-events:none;
+  display:flex; flex-wrap:wrap; align-content:space-around; justify-content:space-around;
+  font-size:2.2rem; opacity:0.3; filter:blur(0.3px);
+}
+.start-decor span{ animation:startFloat 3.6s ease-in-out infinite; }
+.start-decor span:nth-child(odd){ animation-delay:.6s; }
+.start-decor span:nth-child(3n){ animation-delay:1.2s; }
+@keyframes startFloat{
+  0%,100%{ transform:translateY(0) rotate(-6deg); }
+  50%{ transform:translateY(-14px) rotate(6deg); }
+}
+.start-card{
+  position:relative; z-index:2; text-align:center; padding:40px 32px; max-width:440px;
+}
+.start-logo{
+  font-family:'Bebas Neue', Arial, sans-serif; color:var(--red); font-size:1.5rem;
+  letter-spacing:2px; margin-bottom:22px;
+}
+.start-emoji{ font-size:4.6rem; margin-bottom:14px; animation:startBounce 2.4s ease-in-out infinite; }
+@keyframes startBounce{
+  0%,100%{ transform:translateY(0) rotate(-4deg); }
+  50%{ transform:translateY(-12px) rotate(4deg); }
+}
+.start-title{
+  font-family:'Bebas Neue', Arial, sans-serif; font-size:clamp(2rem,7vw,3rem);
+  color:#fff; letter-spacing:1px; margin-bottom:10px; line-height:1.1;
+}
+.start-sub{ color:var(--lightgray); font-size:0.95rem; margin-bottom:32px; }
+.start-btn{
+  border:none; border-radius:44px; padding:17px 46px; font-size:1.15rem; font-weight:700;
+  cursor:pointer; background:linear-gradient(135deg,#ff5c6c,var(--red)); color:#fff;
+  box-shadow:0 12px 30px rgba(229,9,20,0.5);
+  display:inline-flex; align-items:center; gap:10px;
+  transition:transform .15s ease, box-shadow .15s ease;
+  animation:startPulse 2s ease-in-out infinite;
+}
+.start-btn:hover{ transform:scale(1.06); box-shadow:0 16px 34px rgba(229,9,20,0.6); }
+@keyframes startPulse{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.04); }
+}
+.start-hint{ margin-top:18px; color:var(--gray); font-size:0.78rem; }
+
+@media (max-width:520px){
+  .start-decor{ font-size:1.7rem; }
+  .start-card{ padding:32px 22px; }
+}

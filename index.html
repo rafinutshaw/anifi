@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Anika's Birthday Special | Netflix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/player.css">
+  <link rel="stylesheet" href="css/start-overlay.css">
+</head>
+
+<body>
+
+  <div class="start-overlay" id="startOverlay">
+    <div class="start-decor" aria-hidden="true">
+      <span>🎉</span><span>🎈</span><span>✨</span><span>🎂</span><span>🌸</span><span>🎁</span>
+      <span>🎈</span><span>💫</span><span>🎉</span><span>🌸</span><span>🎂</span><span>✨</span>
+    </div>
+    <div class="start-card">
+      <div class="start-logo">💗 NETFLIX</div>
+      <div class="start-emoji">🎂</div>
+      <h1 class="start-title">Anika's Birthday<br>Special</h1>
+      <p class="start-sub">A little series, made just for you.</p>
+      <button class="start-btn" onclick="dismissStartOverlay()">▶ Start</button>
+      <div class="start-hint">💌</div>
+    </div>
+  </div>
+
+  <svg width="0" height="0" style="position:absolute;overflow:hidden">
+    <symbol id="cute-girl" viewBox="0 0 100 120">
+      <path d="M20 40 Q50 15 80 40 L80 55 Q50 70 20 55 Z" fill="#5b3a29" />
+      <circle cx="20" cy="35" r="12" fill="#5b3a29" />
+      <circle cx="80" cy="35" r="12" fill="#5b3a29" />
+      <circle cx="50" cy="45" r="26" fill="#ffd9b3" />
+      <path d="M24 38 Q50 18 76 38 Q60 30 50 30 Q40 30 24 38 Z" fill="#5b3a29" />
+      <circle cx="40" cy="48" r="3" fill="#3a2a20" />
+      <circle cx="60" cy="48" r="3" fill="#3a2a20" />
+      <circle cx="33" cy="55" r="4" fill="#ff9eb0" opacity="0.6" />
+      <circle cx="67" cy="55" r="4" fill="#ff9eb0" opacity="0.6" />
+      <path d="M42 58 Q50 64 58 58" stroke="#a15c3e" stroke-width="2.5" fill="none" stroke-linecap="round" />
+      <path d="M50 18 L44 12 L50 15 L56 12 Z" fill="#e50914" />
+      <path d="M28 78 Q50 65 72 78 L78 115 Q50 122 22 115 Z" fill="#e05a72" />
+      <path d="M28 80 Q10 75 8 60" stroke="#ffd9b3" stroke-width="8" fill="none" stroke-linecap="round" />
+      <path d="M72 80 Q90 90 88 100" stroke="#ffd9b3" stroke-width="8" fill="none" stroke-linecap="round" />
+    </symbol>
+  </svg>
+
+  <div class="logo">💗 NETFLIX</div>
+
+  <section class="hero">
+    <img class="hero-photo" id="coverPhoto" alt="Cover photo">
+    <div class="hero-scrim"></div>
+    <input type="file" id="coverPhotoInput" accept="image/*">
+    <div class="hero-content">
+      <div class="hero-tag">🎬 NETFLIX ORIGINAL SERIES</div>
+      <h1 class="hero-title">Anika's Birthday Special</h1>
+      <div class="hero-meta">
+        <span>🎂 New Season</span>
+        <span class="age">5 Episodes</span>
+        <span>⭐ 10/10 Match</span>
+      </div>
+      <p class="hero-desc">The story of Anika — her journey,
+        her strength, her smile. From where it all began to the beautiful chapters still ahead, this is a celebration
+        of everything she is.</p>
+      <div class="btn-row">
+        <button class="btn btn-play" onclick="openPlayer(0)">▶ Play S1: The Descent</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <h2>Anika's Birthday Special — Episodes</h2>
+    <div class="row-scroll">
+      <div class="card" onclick="openPlayer(0)">
+        <div class="card-art" style="background:#5b1a1a;"><span class="card-ep">S1</span>🌍<svg
+            class="girl-icon card-girl" width="34" height="41" viewBox="0 0 100 120">
+            <use href="#cute-girl" />
+          </svg><img class="card-photo" id="cardPhoto0" alt=""></div>
+        <div class="card-body">
+          <div class="card-title">The Descent</div>
+          <div class="card-sub">How it all began</div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:100%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="openPlayer(1)">
+        <div class="card-art" style="background:#1a3d5b;"><span class="card-ep">S2</span>📚<svg
+            class="girl-icon card-girl" width="34" height="41" viewBox="0 0 100 120">
+            <use href="#cute-girl" />
+          </svg><img class="card-photo" id="cardPhoto1" alt=""></div>
+        <div class="card-body">
+          <div class="card-title">The Glow Up</div>
+          <div class="card-sub">Character development unlocked</div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:100%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="openPlayer(2)">
+        <div class="card-art" style="background:#3d5b1a;"><span class="card-ep">S3</span>✨<svg
+            class="girl-icon card-girl" width="34" height="41" viewBox="0 0 100 120">
+            <use href="#cute-girl" />
+          </svg><img class="card-photo" id="cardPhoto2" alt=""></div>
+        <div class="card-body">
+          <div class="card-title">Main Character</div>
+          <div class="card-sub">Undoubtedly, always</div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:85%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="openPlayer(3)">
+        <div class="card-art" style="background:#5b3d1a;"><span class="card-ep">S4</span>🌅<svg
+            class="girl-icon card-girl" width="34" height="41" viewBox="0 0 100 120">
+            <use href="#cute-girl" />
+          </svg><img class="card-photo" id="cardPhoto3" alt=""></div>
+        <div class="card-body">
+          <div class="card-title">Only The Beginning</div>
+          <div class="card-sub">The best is yet to come</div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:60%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="openPlayer(4)">
+        <div class="card-art" style="background:#402040;"><span class="card-ep">S5</span>🎂<svg
+            class="girl-icon card-girl" width="34" height="41" viewBox="0 0 100 120">
+            <use href="#cute-girl" />
+          </svg><img class="card-photo" id="cardPhoto4" alt=""></div>
+        <div class="card-body">
+          <div class="card-title">Happy Birthday</div>
+          <div class="card-sub">The season finale</div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cast">
+    <h2>Cast &amp; Crew</h2>
+    <div class="cast-list">
+      <div class="chip"><svg class="girl-icon chip-icon" width="18" height="22" viewBox="0 0 100 120">
+          <use href="#cute-girl" />
+        </svg><span>Anika — You, The Main Character</span></div>
+      <div class="chip">Me</div>
+      <div class="chip">Close Friends</div>
+      <div class="chip">Everyone Who Loves Her</div>
+    </div>
+  </section>
+
+  <footer><svg class="girl-icon" width="16" height="19" viewBox="0 0 100 120" style="margin-right:6px;">
+      <use href="#cute-girl" />
+    </svg>A Netflix-style tribute, made with love for Anika's birthday.</footer>
+
+  <div class="music-widget">
+    <button id="musicToggle" class="music-toggle" onclick="toggleMusic()" title="Toggle background music">🔇</button>
+    <div class="music-hint" id="musicHint">🎵 Tap Play to start the music</div>
+  </div>
+
+  <div class="player" id="player">
+    <div class="confetti-layer" id="confettiLayer"></div>
+    <div class="player-top">
+      <button class="player-close" onclick="closePlayer()">✕</button>
+      <div class="player-label">🎂🎈<span id="playerLabelText">NETFLIX · ANIKA'S BIRTHDAY SPECIAL</span></div>
+      <div style="width:36px;"></div>
+    </div>
+    <div class="player-media" id="playerMedia">
+      <img class="player-photo" id="playerPhoto" alt="Photo">
+      <div class="player-scrim"></div>
+      <input type="file" id="photoInput" accept="image/*">
+      <div class="player-bottom">
+        <div class="letter-box" id="letterBox">
+          <div class="player-title" id="playerTitle">The Descent</div>
+          <div class="text-chips" id="textChips"></div>
+        </div>
+
+        <div class="player-nav">
+          <button class="nav-btn" id="prevBtn" onclick="goTo(currentEp-1)">◀ Previous</button>
+          <div class="ep-dots" id="epDots"></div>
+          <button class="nav-btn" id="nextBtn" onclick="goTo(currentEp+1)">Next Episode ▶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- load order matters: later files use globals defined by earlier ones -->
+  <script src="js/music.js"></script>
+  <script src="js/episodes.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
